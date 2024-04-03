@@ -1,52 +1,56 @@
-[
-  {
-    "title": "Add User",
-    "description": "Add a user to the system.",
-    "longDescription": "When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line plus the default values from the system. Depending on command line options, the useradd command will update system files and may also create the new user's home directory and copy initial files.\n\nBy default, a group will also be created for the new user (see -g, -N, -U, and USERGROUPS_ENAB).",
-    "command": ["/bin/sh", "-c", "echo Would run ‘useradd blah blah’"]
-  },
-  {
-    "title": "Modify User",
-    "description": "Modify an existing user.",
-    "longDescription": "",
-    "command": ["/bin/sh", "-c", "echo Would run ‘usermod blah blah’"]
-  },
-  {
-    "title": "List Users",
-    "description": "List all users on the system.",
-    "longDescription": null,
-    "command": ["/bin/sh", "-c", "echo Would run ‘cat /etc/passwd’"]
-  },
-  {
-    "title": "Zażółć Gęślą Jaźń",
-    "description": "Unicode test",
-    "longDescription": null,
-    "command": ["/bin/sh", "-c", "echo Would zażółć gęślą jaźń"],
-    "subcommands": [1, 2, 3]
-  },
-  {
-    "title": "Group Commands",
-    "description": "A few commands to manage groups on this system",
-    "longDescription": "",
-    "subcommands": [
-      {
-        "title": "Add Group",
-        "description": "Add a user group to the system.",
-        "longDescription": "",
-        "command": ["/bin/sh", "-c", "echo Would run ‘groupadd blah blah’"]
-      },
-      {
-        "title": "Modify Group",
-        "description": "Modify a group and its list of members.",
-        "longDescription": "",
-        "command": ["/bin/sh", "-c", "echo Would run ‘groupmod blah blah’"]
-      },
-      {
-        "title": "List Groups",
-        "description": "List all groups on the system.",
-        "longDescription": "",
-        "command": ["/bin/sh", "-c", "echo Would run ‘cat /etc/group’"]
-      }
-    ]
-  }
-]
+{
+  "title": "Menu example",
+  "longDescription": "Choose an option\n\nand a multi-line string!",
+  "subcommands": [
+    {
+      "title": "Add User",
+      "description": "Add a user to the system.",
+      "longDescription": "When invoked without the -D option, the useradd command creates a new user account using the values specified on the command line plus the default values from the system. Depending on command line options, the useradd command will update system files and may also create the new user's home directory and copy initial files.\n\nBy default, a group will also be created for the new user (see -g, -N, -U, and USERGROUPS_ENAB).",
+      "command": ["/bin/sh", "-c", "echo Would run ‘useradd blah blah’"]
+    },
+    {
+      "title": "Modify User",
+      "description": "Modify an existing user.",
+      "longDescription": "",
+      "command": ["/bin/sh", "-c", "echo Would run ‘usermod blah blah’"]
+    },
+    {
+      "title": "List Users",
+      "description": "List all users on the system.",
+      "longDescription": null,
+      "command": ["/bin/sh", "-c", "echo Would run ‘cat /etc/passwd’"]
+    },
+    {
+      "title": "Zażółć Gęślą Jaźń",
+      "description": "Unicode test",
+      "longDescription": null,
+      "command": ["/bin/sh", "-c", "echo Would zażółć gęślą jaźń"],
+      "subcommands": [1, 2, 3]
+    },
+    {
+      "title": "Group Commands",
+      "description": "A few commands to manage groups on this system",
+      "longDescription": "",
+      "subcommands": [
+        {
+          "title": "Add Group",
+          "description": "Add a user group to the system.",
+          "longDescription": "",
+          "command": ["/bin/sh", "-c", "echo Would run ‘groupadd blah blah’"]
+        },
+        {
+          "title": "Modify Group",
+          "description": "Modify a group and its list of members.",
+          "longDescription": "",
+          "command": ["/bin/sh", "-c", "echo Would run ‘groupmod blah blah’"]
+        },
+        {
+          "title": "List Groups",
+          "description": "List all groups on the system.",
+          "longDescription": "",
+          "command": ["/bin/sh", "-c", "echo Would run ‘cat /etc/group’"]
+        }
+      ]
+    }
+  ]
+}

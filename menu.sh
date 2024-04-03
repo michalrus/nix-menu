@@ -8,7 +8,8 @@ set -euo pipefail
 
 mapfile -d $'\0' menu_items < <(
     jq -j '
-       sort_by(.subcommands | length > 0 | not)
+       .subcommands
+       | sort_by(.subcommands | length > 0 | not)
        | (map(.title | length) | max) as $max_length_alt
        | .[]
        | "\u0000",
@@ -21,8 +22,8 @@ mapfile -d $'\0' menu_items < <(
 )
 
 exec dialog \
-    --backtitle "nix-menu 0.5.4" \
+    --backtitle "nix-menu %NIX_MENU_VERSION%" \
     --colors --keep-tite --ok-label "Select" --cancel-label "Back" --scrollbar --tab-correct \
-    --title "Menu example" \
-    --menu "$(printf "Choose an option\n\nand a \Zbmulti-line string\Zn!\n")" 0 0 0 \
+    --title "$(jq -r '.title' example.json)" \
+    --menu "$(jq -r 'if .longDescription == null or .longDescription == "" then .description else .longDescription end' example.json)" 0 0 0 \
     "${menu_items[@]}"
