@@ -21,7 +21,7 @@
             treefmt
           ]) ++ [
             (pkgs.writeShellScriptBin "menu" ''
-              export PATH=${with pkgs; lib.makeBinPath [ dialog jq ]}:"$PATH"
+              export PATH=${with pkgs; lib.makeBinPath [ dialog jq gnused ]}:"$PATH"
               exec ${pkgs.runtimeShell} ${./menu.sh}
             '')
           ];
