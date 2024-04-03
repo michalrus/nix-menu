@@ -25,7 +25,26 @@
       "description": "Unicode test",
       "longDescription": null,
       "command": ["/bin/sh", "-c", "echo Would zażółć gęślą jaźń"],
-      "subcommands": [1, 2, 3]
+      "subcommands": [
+        {
+          "title": "Zażółć",
+          "description": "Unicode test",
+          "longDescription": null,
+          "command": ["/bin/sh", "-c", "echo Zażółć"]
+        },
+        {
+          "title": "Gęślą",
+          "description": "Unicode test",
+          "longDescription": null,
+          "command": ["/bin/sh", "-c", "echo Gęślą"]
+        },
+        {
+          "title": "Jaźń",
+          "description": "Unicode test",
+          "longDescription": null,
+          "command": ["/bin/sh", "-c", "echo Jaźń"]
+        }
+      ]
     },
     {
       "title": "Group Commands",
