@@ -1,3 +1,13 @@
 [formatter.nix]
 command = "nixpkgs-fmt"
 includes = ["*.nix"]
+
+[formatter.shell]
+command = "/bin/sh"
+options = ["-euc", """ shellcheck "$@" && shfmt -i 4 -w "$@" """, "--"]
+includes = ["*.sh"]
+
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = ["*.json", "*.md"]
