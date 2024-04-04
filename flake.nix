@@ -54,7 +54,7 @@
         mkPackage = { pkgs }:
           pkgs.writeShellScriptBin "menu" ''
             export PATH=${with pkgs; lib.makeBinPath [ dialog jq gnused ]}:"$PATH"
-            ${builtins.replaceStrings ["%NIX_MENU_VERSION%"] [(inputs.self.rev or "dirty")] (builtins.readFile ./menu.sh)}
+            ${builtins.replaceStrings ["%NIX_MENU_VERSION%"] [(inputs.self.shortRev or "dirty")] (builtins.readFile ./menu.sh)}
           '';
       };
     };
