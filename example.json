@@ -18,7 +18,7 @@
       "title": "List Users",
       "description": "List all users on the system.",
       "longDescription": null,
-      "command": ["/bin/sh", "-c", "echo Would run ‘cat /etc/passwd’"]
+      "command": ["/bin/sh", "-c", "echo 'Would run' '‘cat /etc/passwd’'"]
     },
     {
       "title": "Zażółć Gęślą Jaźń",
