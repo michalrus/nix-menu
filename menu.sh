@@ -15,8 +15,8 @@ BACKTITLE_OPTS=("--backtitle" "nix-menu (%NIX_MENU_VERSION%)")
 
 if command -v dialog >/dev/null 2>&1; then
     DIALOG_CMD=dialog
-    DIALOG_OPTS=(--colors --keep-tite --scrollbar --no-mouse --ok-label "Select" --cancel-label "Back" "${BACKTITLE_OPTS[@]}")
-    FMT_BOLD=$(printf "\Zb\Z7")
+    DIALOG_OPTS=(--colors --scrollbar --no-mouse --ok-label "Select" --cancel-label "Back" "${BACKTITLE_OPTS[@]}")
+    FMT_BOLD=$(printf "\Zb")
     FMT_RESET=$(printf "\Zn")
 elif command -v whiptail >/dev/null 2>&1; then
     DIALOG_CMD=whiptail
@@ -89,6 +89,8 @@ draw_menu() {
                     "$(jq -r 'if .longDescription == null or .longDescription == "" then .description else .longDescription end' <<<"$new_menu_json")" \
                     "$escaped_command")" \
                 0 0; then
+                echo
+                echo
                 set -x
                 exec "${the_command[@]}"
             else
